@@ -69,7 +69,7 @@ class TransformWorker(object):
         """ defer creation as __init__ also called in management thread
         """
         process = subprocess.Popen(
-            self.args, close_fds=True,
+            self.args, close_fds=True, shell=True,
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True,
             **self.kw
         )
