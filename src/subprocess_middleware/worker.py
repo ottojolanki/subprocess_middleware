@@ -70,7 +70,7 @@ class TransformWorker(object):
         """
         process = subprocess.Popen(
             self.args, close_fds=True,
-            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True,
             **self.kw
         )
         worker_processes.add(process)
